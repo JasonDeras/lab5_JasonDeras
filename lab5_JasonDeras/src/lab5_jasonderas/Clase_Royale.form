@@ -547,6 +547,7 @@
                 <MenuItem class="javax.swing.JMenuItem" name="jmi_Mazos">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Mazos"/>
+                    <Property name="enabled" type="boolean" value="false"/>
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jmi_MazosActionPerformed"/>
@@ -555,6 +556,7 @@
                 <MenuItem class="javax.swing.JMenuItem" name="jmi_Cartas">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Cartas"/>
+                    <Property name="enabled" type="boolean" value="false"/>
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jmi_CartasActionPerformed"/>
@@ -567,6 +569,7 @@
         <Menu class="javax.swing.JMenu" name="jm_Clan">
           <Properties>
             <Property name="text" type="java.lang.String" value="Clanes"/>
+            <Property name="enabled" type="boolean" value="false"/>
           </Properties>
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="jmi_CreacionC">

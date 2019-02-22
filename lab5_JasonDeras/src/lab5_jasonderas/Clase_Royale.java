@@ -436,6 +436,7 @@ public class Clase_Royale extends javax.swing.JFrame {
         });
 
         jmi_Mazos.setText("Mazos");
+        jmi_Mazos.setEnabled(false);
         jmi_Mazos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jmi_MazosActionPerformed(evt);
@@ -444,6 +445,7 @@ public class Clase_Royale extends javax.swing.JFrame {
         jm_Login.add(jmi_Mazos);
 
         jmi_Cartas.setText("Cartas");
+        jmi_Cartas.setEnabled(false);
         jmi_Cartas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jmi_CartasActionPerformed(evt);
@@ -456,6 +458,7 @@ public class Clase_Royale extends javax.swing.JFrame {
         jmb_Usuarios.add(jm_Usuario);
 
         jm_Clan.setText("Clanes");
+        jm_Clan.setEnabled(false);
 
         jmi_CreacionC.setText("Crear un clan");
         jmi_CreacionC.addActionListener(new java.awt.event.ActionListener() {
@@ -493,16 +496,17 @@ public class Clase_Royale extends javax.swing.JFrame {
 
     private void jm_UsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jm_UsuarioActionPerformed
         // TODO add your handling code here:
-        
+
     }//GEN-LAST:event_jm_UsuarioActionPerformed
 
     private void bt_LoginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_LoginMouseClicked
         // TODO add your handling code here:
         if (tf_nUsuario.getText().equalsIgnoreCase(((Usuarios) usuario.get(cont)).getN_usuario()) && pf_Contraseña.getText().equalsIgnoreCase(((Usuarios) usuario.get(cont)).getContraseña())) {
             jmi_Mazos.setEnabled(true);
-            jmi_Mazos.setEnabled(true);
+            jmi_Cartas.setEnabled(true);
             tf_nUsuario.setText("");
             pf_Contraseña.setText("");
+            jm_Clan.setEnabled(true);
             jd_Login.setVisible(false);
             cont++;
         }
@@ -739,7 +743,7 @@ public class Clase_Royale extends javax.swing.JFrame {
             tf_NC.setText("");
             tf_Tipo.setText("");
             jd_NC.setDate(new Date());
-            
+
         } else {
             JOptionPane.showMessageDialog(this, "Tipo de clan no validao");
         }
