@@ -493,6 +493,7 @@ public class Clase_Royale extends javax.swing.JFrame {
 
     private void jm_UsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jm_UsuarioActionPerformed
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_jm_UsuarioActionPerformed
 
     private void bt_LoginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_LoginMouseClicked
@@ -735,6 +736,10 @@ public class Clase_Royale extends javax.swing.JFrame {
         // TODO add your handling code here:
         if (tf_Tipo.getText().equalsIgnoreCase("bronce") || tf_Tipo.getText().equalsIgnoreCase("palta") || tf_Tipo.getText().equalsIgnoreCase("oro") || tf_Tipo.getText().equalsIgnoreCase("legendario")) {
             clanes.add(new Clanes(tf_NC.getText(), jd_NC.getDate(), "", tf_Tipo.getText()));
+            tf_NC.setText("");
+            tf_Tipo.setText("");
+            jd_NC.setDate(new Date());
+            
         } else {
             JOptionPane.showMessageDialog(this, "Tipo de clan no validao");
         }
