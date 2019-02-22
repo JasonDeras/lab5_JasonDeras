@@ -418,6 +418,7 @@ public class Clase_Royale extends javax.swing.JFrame {
         // TODO add your handling code here:
         int tcost = 0;
         int cant = 0;
+        int cant2 = 0;
         int op;
         String nombre = "";
         double daño = 0;
@@ -504,9 +505,23 @@ public class Clase_Royale extends javax.swing.JFrame {
             mazos.setCartas(cartas);
             ArrayList m = new ArrayList();
             m.add(mazos);
-            ((Usuarios) usuario.get(cont)).setMazos(m);
-            if (((Usuarios) usuario.get(cont)).getMazos().size() > 2) {
-                JOptionPane.showMessageDialog(this, "El mazo ya tiene tres clases");
+            ((Usuarios) usuario.get(cont)).setMazos1(m);
+
+            if (((Usuarios) usuario.get(cont)).getMazos1().size() == 2) {
+                JOptionPane.showMessageDialog(this, "Mazo uno llenado");
+                tcost = 0;
+                cant2++;
+            } else if (((Usuarios) usuario.get(cont)).getMazos2().size() == 2) {
+                JOptionPane.showMessageDialog(this, "Mazo dos llenado");
+                tcost = 0;
+                cant2++;
+            } else if (((Usuarios) usuario.get(cont)).getMazos3().size() == 2) {
+                JOptionPane.showMessageDialog(this, "Mazo tres llenado");
+                tcost = 0;
+                cant2++;
+            }
+            if (cant2 == 3) {
+                JOptionPane.showMessageDialog(this, "No hay mas Mazos Disponibles");
             }
             cont++;
         }

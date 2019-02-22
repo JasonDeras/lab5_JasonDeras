@@ -12,7 +12,9 @@ public class Usuarios {
     private String n_usuario;
     private int edad;
     private Color c;
-    private ArrayList<Mazo> mazos = new ArrayList();
+    private ArrayList<Mazo> mazos1 = new ArrayList();
+    private ArrayList<Mazo> mazos2 = new ArrayList();
+    private ArrayList<Mazo> mazos3 = new ArrayList();
     private Date Fecha;
 
     public Usuarios() {
@@ -76,17 +78,41 @@ public class Usuarios {
         this.c = c;
     }
 
-    public ArrayList<Mazo> getMazos() {
-        return mazos;
+    public ArrayList<Mazo> getMazos1() {
+        return mazos1;
     }
 
-    public void setMazos(ArrayList<Mazo> mazos) {
-        this.mazos = mazos;
+    public void setMazos1(ArrayList<Mazo> mazos1) {
+        this.mazos1 = mazos1;
+    }
+
+    public ArrayList<Mazo> getMazos2() {
+        return mazos2;
+    }
+
+    public void setMazos2(ArrayList<Mazo> mazos2) {
+        this.mazos2 = mazos2;
+    }
+
+    public ArrayList<Mazo> getMazos3() {
+        return mazos3;
+    }
+
+    public void setMazos3(ArrayList<Mazo> mazos3) {
+        this.mazos3 = mazos3;
+    }
+
+    public Date getFecha() {
+        return Fecha;
+    }
+
+    public void setFecha(Date Fecha) {
+        this.Fecha = Fecha;
     }
 
     @Override
     public String toString() {
-        return "Usuarios{" + "nombre=" + nombre + ", apellido=" + apellido + ", n_usuario=" + n_usuario + ", edad=" + edad + ", c=" + c + ", mazos=" + mazos + '}';
+        return "Usuarios{" + "contrase\u00f1a=" + contraseña + ", nombre=" + nombre + ", apellido=" + apellido + ", n_usuario=" + n_usuario + ", edad=" + edad + ", c=" + c + ", mazos1=" + mazos1 + ", mazos2=" + mazos2 + ", mazos3=" + mazos3 + ", Fecha=" + Fecha + '}';
     }
 
 }
