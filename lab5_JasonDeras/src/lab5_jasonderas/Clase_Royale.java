@@ -11,6 +11,9 @@ import java.util.Date;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JColorChooser;
 import javax.swing.JOptionPane;
+import javax.swing.JTree;
+import javax.swing.tree.DefaultMutableTreeNode;
+import javax.swing.tree.DefaultTreeModel;
 
 /**
  *
@@ -64,7 +67,7 @@ public class Clase_Royale extends javax.swing.JFrame {
         jl_Mazos = new javax.swing.JLabel();
         cb_Mazos = new javax.swing.JComboBox<>();
         jScrollPane2 = new javax.swing.JScrollPane();
-        j_Mazos = new javax.swing.JTree();
+        jt_Mazos = new javax.swing.JTree();
         jd_Union = new javax.swing.JDialog();
         jl_Nombre1 = new javax.swing.JLabel();
         bt_Unirse = new javax.swing.JButton();
@@ -285,8 +288,8 @@ public class Clase_Royale extends javax.swing.JFrame {
         });
 
         javax.swing.tree.DefaultMutableTreeNode treeNode1 = new javax.swing.tree.DefaultMutableTreeNode("Mazos");
-        j_Mazos.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
-        jScrollPane2.setViewportView(j_Mazos);
+        jt_Mazos.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
+        jScrollPane2.setViewportView(jt_Mazos);
 
         javax.swing.GroupLayout jd_MazosLayout = new javax.swing.GroupLayout(jd_Mazos.getContentPane());
         jd_Mazos.getContentPane().setLayout(jd_MazosLayout);
@@ -674,8 +677,33 @@ public class Clase_Royale extends javax.swing.JFrame {
 
     private void cb_MazosItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cb_MazosItemStateChanged
         // TODO add your handling code here:
-        if (evt.getStateChange() == 2) {
-
+        try {
+            if (cb_Mazos.getSelectedIndex() == 1) {
+                DefaultTreeModel modelo = (DefaultTreeModel) jt_Mazos.getModel();
+                DefaultMutableTreeNode raiz = (DefaultMutableTreeNode) modelo.getRoot();
+                int centi = -1;
+                for (int i = 0; i < raiz.getChildCount(); i++) {
+                    if (raiz.getChildAt(i).toString().equalsIgnoreCase(s.getTipo())) {
+                        for (int j = 0; j < raiz.getChildAt(i).getChildCount(); j++) {
+                            if (raiz.getChildAt(i).getChildAt(j).toString().equalsIgnoreCase(s.getNombre()) && raiz.getChildAt(i).toString().equalsIgnoreCase(s.getTipo())) {
+                                i = raiz.getChildCount();
+                                j = raiz.getChildAt(i).getChildAt(i).getChildCount();
+                            }
+                        }
+                        DefaultMutableTreeNode per = new DefaultMutableTreeNode(s);
+                        ((DefaultMutableTreeNode) raiz.getChildAt(i)).add(per);
+                        centi = 1;
+                    }
+                }
+                if (centi == -1) {
+                    DefaultMutableTreeNode nep = new DefaultMutableTreeNode(s.getTipo());
+                    DefaultMutableTreeNode rep = new DefaultMutableTreeNode(s);
+                    nep.add(rep);
+                    raiz.add(nep);
+                }
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Ocurrio un problema ");
         }
     }//GEN-LAST:event_cb_MazosItemStateChanged
 
@@ -755,7 +783,6 @@ public class Clase_Royale extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTree j_Mazos;
     private javax.swing.JDialog jd_Cartas;
     private javax.swing.JDialog jd_Creacion_U;
     private javax.swing.JDialog jd_Creacion_Usuario;
@@ -785,6 +812,7 @@ public class Clase_Royale extends javax.swing.JFrame {
     private javax.swing.JMenuItem jmi_CreacionC;
     private javax.swing.JMenuItem jmi_Mazos;
     private javax.swing.JMenuItem jmi_UC;
+    private javax.swing.JTree jt_Mazos;
     private javax.swing.JPasswordField pf_Contraseña;
     private javax.swing.JPasswordField pf_Contraseña1;
     private javax.swing.JTextArea ta_Opciones_c;
