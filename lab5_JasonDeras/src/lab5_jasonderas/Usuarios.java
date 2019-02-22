@@ -2,25 +2,38 @@ package lab5_jasonderas;
 
 import java.awt.Color;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class Usuarios {
 
+    private String contraseña;
     private String nombre;
     private String apellido;
     private String n_usuario;
     private int edad;
     private Color c;
     private ArrayList<Mazo> mazos = new ArrayList();
+    private Date Fecha;
 
     public Usuarios() {
     }
 
-    public Usuarios(String nombre, String apellido, String n_usuario, int edad, Color c) {
+    public Usuarios(String contraseña, String nombre, String apellido, String n_usuario, int edad, Color c, Date Fecha) {
+        this.contraseña = contraseña;
         this.nombre = nombre;
         this.apellido = apellido;
         this.n_usuario = n_usuario;
         this.edad = edad;
         this.c = c;
+        this.Fecha = Fecha;
+    }
+
+    public String getContraseña() {
+        return contraseña;
+    }
+
+    public void setContraseña(String contraseña) {
+        this.contraseña = contraseña;
     }
 
     public String getNombre() {
@@ -71,9 +84,17 @@ public class Usuarios {
         this.mazos = mazos;
     }
 
+    public Date getFecha() {
+        return Fecha;
+    }
+
+    public void setFecha(Date Fecha) {
+        this.Fecha = Fecha;
+    }
+
     @Override
     public String toString() {
-        return "Usuarios{" + "nombre=" + nombre + ", apellido=" + apellido + ", n_usuario=" + n_usuario + ", edad=" + edad + ", c=" + c + ", mazos=" + mazos + '}';
+        return "Usuarios{" + "contrase\u00f1a=" + contraseña + ", nombre=" + nombre + ", apellido=" + apellido + ", n_usuario=" + n_usuario + ", edad=" + edad + ", c=" + c + ", mazos=" + mazos + ", Fecha=" + Fecha + '}';
     }
 
 }

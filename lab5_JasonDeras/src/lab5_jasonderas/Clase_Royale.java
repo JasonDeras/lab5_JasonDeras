@@ -5,6 +5,12 @@
  */
 package lab5_jasonderas;
 
+import java.awt.Color;
+import java.util.ArrayList;
+import java.util.Date;
+import javax.swing.JColorChooser;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author jason
@@ -28,7 +34,212 @@ public class Clase_Royale extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jd_Login = new javax.swing.JDialog();
+        bt_Login = new javax.swing.JButton();
+        jl_NUsuraio = new javax.swing.JLabel();
+        jl_Contaseña = new javax.swing.JLabel();
+        pf_Contraseña = new javax.swing.JPasswordField();
+        tf_nUsuario = new javax.swing.JTextField();
+        jd_Creacion_Usuario = new javax.swing.JDialog();
+        jl_Nombre = new javax.swing.JLabel();
+        jl_Apellido = new javax.swing.JLabel();
+        jl_nUsuario = new javax.swing.JLabel();
+        jl_Contraseña = new javax.swing.JLabel();
+        jl_Fecha = new javax.swing.JLabel();
+        bt_Creacio_U = new javax.swing.JButton();
+        jd_Fecha_nace = new com.toedter.calendar.JDateChooser();
+        tf_Nombre = new javax.swing.JTextField();
+        tf_Apellido = new javax.swing.JTextField();
+        tf_NUsuario1 = new javax.swing.JTextField();
+        pf_Contraseña1 = new javax.swing.JPasswordField();
+        bt_Color = new javax.swing.JButton();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jm_Usuario = new javax.swing.JMenu();
+        jmi_Creacion = new javax.swing.JMenuItem();
+        jm_Login = new javax.swing.JMenu();
+        jmi_Mazos = new javax.swing.JMenuItem();
+        jmi_Cartas = new javax.swing.JMenuItem();
+        jm_Clan = new javax.swing.JMenu();
+
+        bt_Login.setText("Login");
+        bt_Login.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bt_LoginMouseClicked(evt);
+            }
+        });
+
+        jl_NUsuraio.setText("Nombre de Usuario");
+
+        jl_Contaseña.setText("Contraseña");
+
+        javax.swing.GroupLayout jd_LoginLayout = new javax.swing.GroupLayout(jd_Login.getContentPane());
+        jd_Login.getContentPane().setLayout(jd_LoginLayout);
+        jd_LoginLayout.setHorizontalGroup(
+            jd_LoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_LoginLayout.createSequentialGroup()
+                .addGroup(jd_LoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jd_LoginLayout.createSequentialGroup()
+                        .addGap(136, 136, 136)
+                        .addComponent(bt_Login))
+                    .addGroup(jd_LoginLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jl_Contaseña)
+                        .addGap(57, 57, 57)
+                        .addComponent(pf_Contraseña))
+                    .addGroup(jd_LoginLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jl_NUsuraio)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(tf_nUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(124, Short.MAX_VALUE))
+        );
+        jd_LoginLayout.setVerticalGroup(
+            jd_LoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jd_LoginLayout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addGroup(jd_LoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jl_NUsuraio)
+                    .addComponent(tf_nUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(26, 26, 26)
+                .addGroup(jd_LoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jl_Contaseña)
+                    .addComponent(pf_Contraseña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 92, Short.MAX_VALUE)
+                .addComponent(bt_Login)
+                .addGap(88, 88, 88))
+        );
+
+        jl_Nombre.setText("Nombre");
+
+        jl_Apellido.setText("Apellido");
+
+        jl_nUsuario.setText("Nombre de Usuario");
+
+        jl_Contraseña.setText("Contraseña");
+
+        jl_Fecha.setText("Fecha de Nacimiento");
+
+        bt_Creacio_U.setText("Creacion");
+
+        bt_Color.setText("Color Favorito");
+        bt_Color.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bt_ColorMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jd_Creacion_UsuarioLayout = new javax.swing.GroupLayout(jd_Creacion_Usuario.getContentPane());
+        jd_Creacion_Usuario.getContentPane().setLayout(jd_Creacion_UsuarioLayout);
+        jd_Creacion_UsuarioLayout.setHorizontalGroup(
+            jd_Creacion_UsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_Creacion_UsuarioLayout.createSequentialGroup()
+                .addGroup(jd_Creacion_UsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jd_Creacion_UsuarioLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jd_Creacion_UsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jd_Creacion_UsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jd_Creacion_UsuarioLayout.createSequentialGroup()
+                                    .addComponent(jl_nUsuario)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(tf_NUsuario1))
+                                .addGroup(jd_Creacion_UsuarioLayout.createSequentialGroup()
+                                    .addComponent(jl_Nombre)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(tf_Nombre))
+                                .addGroup(jd_Creacion_UsuarioLayout.createSequentialGroup()
+                                    .addComponent(jl_Contraseña)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(pf_Contraseña1))
+                                .addGroup(jd_Creacion_UsuarioLayout.createSequentialGroup()
+                                    .addComponent(jl_Apellido)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(tf_Apellido)))
+                            .addGroup(jd_Creacion_UsuarioLayout.createSequentialGroup()
+                                .addComponent(jl_Fecha)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jd_Creacion_UsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(bt_Creacio_U)
+                                    .addComponent(jd_Fecha_nace, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                    .addGroup(jd_Creacion_UsuarioLayout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(bt_Color)))
+                .addContainerGap(125, Short.MAX_VALUE))
+        );
+        jd_Creacion_UsuarioLayout.setVerticalGroup(
+            jd_Creacion_UsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_Creacion_UsuarioLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jd_Creacion_UsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jl_Nombre)
+                    .addComponent(tf_Nombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jd_Creacion_UsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jl_Apellido)
+                    .addComponent(tf_Apellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jd_Creacion_UsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jl_nUsuario)
+                    .addComponent(tf_NUsuario1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(15, 15, 15)
+                .addGroup(jd_Creacion_UsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jl_Contraseña)
+                    .addComponent(pf_Contraseña1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                .addGroup(jd_Creacion_UsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jl_Fecha, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jd_Fecha_nace, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(bt_Color)
+                .addGap(24, 24, 24)
+                .addComponent(bt_Creacio_U)
+                .addGap(21, 21, 21))
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jm_Usuario.setText("Usuario");
+        jm_Usuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jm_UsuarioActionPerformed(evt);
+            }
+        });
+
+        jmi_Creacion.setText("Creacion de Usuario");
+        jmi_Creacion.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jmi_CreacionMouseClicked(evt);
+            }
+        });
+        jm_Usuario.add(jmi_Creacion);
+
+        jm_Login.setText("Login");
+        jm_Login.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jm_LoginMouseClicked(evt);
+            }
+        });
+
+        jmi_Mazos.setText("Mazos");
+        jmi_Mazos.setEnabled(false);
+        jm_Login.add(jmi_Mazos);
+
+        jmi_Cartas.setText("Cartas");
+        jmi_Cartas.setEnabled(false);
+        jmi_Cartas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmi_CartasActionPerformed(evt);
+            }
+        });
+        jm_Login.add(jmi_Cartas);
+
+        jm_Usuario.add(jm_Login);
+
+        jMenuBar1.add(jm_Usuario);
+
+        jm_Clan.setText("Clanes");
+        jMenuBar1.add(jm_Clan);
+
+        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -38,15 +249,80 @@ public class Clase_Royale extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGap(0, 274, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
-     * @param args the command line arguments
-     */
+    private void jm_UsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jm_UsuarioActionPerformed
+        // TODO add your handling code here:
+        if (cont == 0) {
+            jd_Login.setModal(true);
+            jd_Login.pack();
+            jd_Login.setLocationRelativeTo(this);
+            jd_Login.setVisible(true);
+        } else {
+            JOptionPane.showMessageDialog(this, "Ocupa crear un usuario primero");
+        }
+
+    }//GEN-LAST:event_jm_UsuarioActionPerformed
+
+    private void jmi_CartasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_CartasActionPerformed
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_jmi_CartasActionPerformed
+
+    private void jm_LoginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jm_LoginMouseClicked
+        // TODO add your handling code here:
+        if (usuario.size() < 0) {
+            JOptionPane.showMessageDialog(this, "Ocupa crear un usuario primero");
+        } else {
+            jd_Login.setModal(true);
+            jd_Login.pack();
+            jd_Login.setLocationRelativeTo(this);
+            jd_Login.setVisible(true);
+        }
+    }//GEN-LAST:event_jm_LoginMouseClicked
+
+    private void bt_LoginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_LoginMouseClicked
+        // TODO add your handling code here:
+        if (tf_nUsuario.getText().equalsIgnoreCase(((Usuarios) usuario.get(cont)).getN_usuario()) && pf_Contraseña.getText().equalsIgnoreCase(((Usuarios) usuario.get(cont)).getContraseña())) {
+            jmi_Mazos.setEnabled(true);
+            jmi_Mazos.setEnabled(true);
+            tf_nUsuario.setText("");
+            pf_Contraseña.setText("");
+            jd_Login.setVisible(false);
+            cont++;
+        }
+    }//GEN-LAST:event_bt_LoginMouseClicked
+
+    private void jmi_CreacionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jmi_CreacionMouseClicked
+        // TODO add your handling code here:
+        jd_Creacion_Usuario.setModal(true);
+        jd_Creacion_Usuario.pack();
+        jd_Creacion_Usuario.setLocationRelativeTo(this);
+        jd_Creacion_Usuario.setVisible(true);
+        int edad = 0;
+        try {
+            edad = (int) (((new Date()).getTime()) - jd_Fecha_nace.getDate().getTime() / (1000 * 60 * 60 * 24));
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Ocurrio un error y no se crreo el usuario");
+        }
+        Usuarios s = new Usuarios(pf_Contraseña1.getText(), tf_Nombre.getText(), tf_Apellido.getText(), tf_NUsuario1.getText(), edad, c, jd_Fecha_nace.getDate());
+        usuario.add(s);
+        tf_Apellido.setText("");
+        tf_NUsuario1.setText("");
+        tf_Nombre.setText("");
+        pf_Contraseña1.setText("");
+        jd_Fecha_nace.setDate(new Date());
+    }//GEN-LAST:event_jmi_CreacionMouseClicked
+
+    private void bt_ColorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_ColorMouseClicked
+        // TODO add your handling code here:
+        c = JColorChooser.showDialog(this, "Selecione un color", Color.yellow);
+    }//GEN-LAST:event_bt_ColorMouseClicked
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -80,5 +356,34 @@ public class Clase_Royale extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton bt_Color;
+    private javax.swing.JButton bt_Creacio_U;
+    private javax.swing.JButton bt_Login;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JDialog jd_Creacion_Usuario;
+    private com.toedter.calendar.JDateChooser jd_Fecha_nace;
+    private javax.swing.JDialog jd_Login;
+    private javax.swing.JLabel jl_Apellido;
+    private javax.swing.JLabel jl_Contaseña;
+    private javax.swing.JLabel jl_Contraseña;
+    private javax.swing.JLabel jl_Fecha;
+    private javax.swing.JLabel jl_NUsuraio;
+    private javax.swing.JLabel jl_Nombre;
+    private javax.swing.JLabel jl_nUsuario;
+    private javax.swing.JMenu jm_Clan;
+    private javax.swing.JMenu jm_Login;
+    private javax.swing.JMenu jm_Usuario;
+    private javax.swing.JMenuItem jmi_Cartas;
+    private javax.swing.JMenuItem jmi_Creacion;
+    private javax.swing.JMenuItem jmi_Mazos;
+    private javax.swing.JPasswordField pf_Contraseña;
+    private javax.swing.JPasswordField pf_Contraseña1;
+    private javax.swing.JTextField tf_Apellido;
+    private javax.swing.JTextField tf_NUsuario1;
+    private javax.swing.JTextField tf_Nombre;
+    private javax.swing.JTextField tf_nUsuario;
     // End of variables declaration//GEN-END:variables
+private ArrayList<Usuarios> usuario = new ArrayList();
+    private int cont = 0;
+    private Color c;
 }
