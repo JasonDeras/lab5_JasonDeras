@@ -53,13 +53,22 @@ public class Clase_Royale extends javax.swing.JFrame {
         tf_NUsuario1 = new javax.swing.JTextField();
         pf_Contraseña1 = new javax.swing.JPasswordField();
         bt_Color = new javax.swing.JButton();
-        jMenuBar1 = new javax.swing.JMenuBar();
+        jd_Cartas = new javax.swing.JDialog();
+        bt_Agrega_Mazo = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        ta_Opciones_c = new javax.swing.JTextArea();
+        jl_Opcion_de_carta = new javax.swing.JLabel();
+        tf_OpcionC = new javax.swing.JTextField();
+        jd_Mazos = new javax.swing.JDialog();
+        jmb_Usuarios = new javax.swing.JMenuBar();
         jm_Usuario = new javax.swing.JMenu();
         jmi_Creacion = new javax.swing.JMenuItem();
         jm_Login = new javax.swing.JMenu();
         jmi_Mazos = new javax.swing.JMenuItem();
         jmi_Cartas = new javax.swing.JMenuItem();
         jm_Clan = new javax.swing.JMenu();
+
+        jd_Login.setTitle("Login");
 
         bt_Login.setText("Login");
         bt_Login.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -108,6 +117,8 @@ public class Clase_Royale extends javax.swing.JFrame {
                 .addComponent(bt_Login)
                 .addGap(88, 88, 88))
         );
+
+        jd_Creacion_Usuario.setTitle("Creacion de usuario nuevo");
 
         jl_Nombre.setText("Nombre");
 
@@ -195,7 +206,69 @@ public class Clase_Royale extends javax.swing.JFrame {
                 .addGap(21, 21, 21))
         );
 
+        jd_Cartas.setTitle("Agregar una Carta al Mazo");
+
+        bt_Agrega_Mazo.setText("Agregar a un Mazo");
+        bt_Agrega_Mazo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_Agrega_MazoActionPerformed(evt);
+            }
+        });
+
+        ta_Opciones_c.setEditable(false);
+        ta_Opciones_c.setColumns(20);
+        ta_Opciones_c.setRows(5);
+        ta_Opciones_c.setText("1. Minipekka\n2. Montapuerco\n3. Golem\n4. Leñador\n5. Dragon Infernal\n6. Dragon\n7. Gigante Noble\n8. Pandilla de Duendes\n");
+        jScrollPane1.setViewportView(ta_Opciones_c);
+
+        jl_Opcion_de_carta.setText("Ingrese una opcion");
+
+        javax.swing.GroupLayout jd_CartasLayout = new javax.swing.GroupLayout(jd_Cartas.getContentPane());
+        jd_Cartas.getContentPane().setLayout(jd_CartasLayout);
+        jd_CartasLayout.setHorizontalGroup(
+            jd_CartasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_CartasLayout.createSequentialGroup()
+                .addGroup(jd_CartasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jd_CartasLayout.createSequentialGroup()
+                        .addGap(98, 98, 98)
+                        .addComponent(bt_Agrega_Mazo))
+                    .addGroup(jd_CartasLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jd_CartasLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jl_Opcion_de_carta)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(tf_OpcionC)))
+                .addContainerGap(161, Short.MAX_VALUE))
+        );
+        jd_CartasLayout.setVerticalGroup(
+            jd_CartasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_CartasLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
+                .addGroup(jd_CartasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jl_Opcion_de_carta)
+                    .addComponent(tf_OpcionC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(27, 27, 27)
+                .addComponent(bt_Agrega_Mazo)
+                .addGap(44, 44, 44))
+        );
+
+        javax.swing.GroupLayout jd_MazosLayout = new javax.swing.GroupLayout(jd_Mazos.getContentPane());
+        jd_Mazos.getContentPane().setLayout(jd_MazosLayout);
+        jd_MazosLayout.setHorizontalGroup(
+            jd_MazosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        jd_MazosLayout.setVerticalGroup(
+            jd_MazosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Clash Royale");
 
         jm_Usuario.setText("Usuario");
         jm_Usuario.addActionListener(new java.awt.event.ActionListener() {
@@ -205,26 +278,34 @@ public class Clase_Royale extends javax.swing.JFrame {
         });
 
         jmi_Creacion.setText("Creacion de Usuario");
-        jmi_Creacion.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jmi_CreacionMouseClicked(evt);
+        jmi_Creacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmi_CreacionActionPerformed(evt);
             }
         });
         jm_Usuario.add(jmi_Creacion);
 
         jm_Login.setText("Login");
-        jm_Login.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jm_LoginMouseClicked(evt);
+        jm_Login.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jm_LoginActionPerformed(evt);
             }
         });
 
         jmi_Mazos.setText("Mazos");
-        jmi_Mazos.setEnabled(false);
+        jmi_Mazos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jmi_MazosMouseClicked(evt);
+            }
+        });
+        jmi_Mazos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmi_MazosActionPerformed(evt);
+            }
+        });
         jm_Login.add(jmi_Mazos);
 
         jmi_Cartas.setText("Cartas");
-        jmi_Cartas.setEnabled(false);
         jmi_Cartas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jmi_CartasActionPerformed(evt);
@@ -234,12 +315,12 @@ public class Clase_Royale extends javax.swing.JFrame {
 
         jm_Usuario.add(jm_Login);
 
-        jMenuBar1.add(jm_Usuario);
+        jmb_Usuarios.add(jm_Usuario);
 
         jm_Clan.setText("Clanes");
-        jMenuBar1.add(jm_Clan);
+        jmb_Usuarios.add(jm_Clan);
 
-        setJMenuBar(jMenuBar1);
+        setJMenuBar(jmb_Usuarios);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -257,33 +338,7 @@ public class Clase_Royale extends javax.swing.JFrame {
 
     private void jm_UsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jm_UsuarioActionPerformed
         // TODO add your handling code here:
-        if (cont == 0) {
-            jd_Login.setModal(true);
-            jd_Login.pack();
-            jd_Login.setLocationRelativeTo(this);
-            jd_Login.setVisible(true);
-        } else {
-            JOptionPane.showMessageDialog(this, "Ocupa crear un usuario primero");
-        }
-
     }//GEN-LAST:event_jm_UsuarioActionPerformed
-
-    private void jmi_CartasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_CartasActionPerformed
-        // TODO add your handling code here:
-
-    }//GEN-LAST:event_jmi_CartasActionPerformed
-
-    private void jm_LoginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jm_LoginMouseClicked
-        // TODO add your handling code here:
-        if (usuario.size() < 0) {
-            JOptionPane.showMessageDialog(this, "Ocupa crear un usuario primero");
-        } else {
-            jd_Login.setModal(true);
-            jd_Login.pack();
-            jd_Login.setLocationRelativeTo(this);
-            jd_Login.setVisible(true);
-        }
-    }//GEN-LAST:event_jm_LoginMouseClicked
 
     private void bt_LoginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_LoginMouseClicked
         // TODO add your handling code here:
@@ -297,7 +352,20 @@ public class Clase_Royale extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_bt_LoginMouseClicked
 
-    private void jmi_CreacionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jmi_CreacionMouseClicked
+    private void bt_ColorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_ColorMouseClicked
+        // TODO add your handling code here:
+        c = JColorChooser.showDialog(this, "Selecione un color", Color.yellow);
+    }//GEN-LAST:event_bt_ColorMouseClicked
+
+    private void jmi_MazosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jmi_MazosMouseClicked
+        // TODO add your handling code here:
+        jd_Mazos.setModal(true);
+        jd_Mazos.pack();
+        jd_Mazos.setLocationRelativeTo(this);
+        jd_Mazos.setVisible(true);
+    }//GEN-LAST:event_jmi_MazosMouseClicked
+
+    private void jmi_CreacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_CreacionActionPerformed
         // TODO add your handling code here:
         jd_Creacion_Usuario.setModal(true);
         jd_Creacion_Usuario.pack();
@@ -316,12 +384,40 @@ public class Clase_Royale extends javax.swing.JFrame {
         tf_Nombre.setText("");
         pf_Contraseña1.setText("");
         jd_Fecha_nace.setDate(new Date());
-    }//GEN-LAST:event_jmi_CreacionMouseClicked
+    }//GEN-LAST:event_jmi_CreacionActionPerformed
 
-    private void bt_ColorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_ColorMouseClicked
+    private void jm_LoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jm_LoginActionPerformed
         // TODO add your handling code here:
-        c = JColorChooser.showDialog(this, "Selecione un color", Color.yellow);
-    }//GEN-LAST:event_bt_ColorMouseClicked
+        if (usuario.size() < 0) {
+            JOptionPane.showMessageDialog(this, "Ocupa crear un usuario primero");
+        } else {
+            jd_Login.setModal(true);
+            jd_Login.pack();
+            jd_Login.setLocationRelativeTo(this);
+            jd_Login.setVisible(true);
+        }
+    }//GEN-LAST:event_jm_LoginActionPerformed
+
+    private void jmi_CartasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_CartasActionPerformed
+        // TODO add your handling code here:
+        jd_Cartas.setModal(true);
+        jd_Cartas.pack();
+        jd_Cartas.setLocationRelativeTo(this);
+        jd_Cartas.setVisible(true);
+    }//GEN-LAST:event_jmi_CartasActionPerformed
+
+    private void jmi_MazosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_MazosActionPerformed
+        // TODO add your handling code here:
+        jd_Mazos.setModal(true);
+        jd_Mazos.pack();
+        jd_Mazos.setLocationRelativeTo(this);
+        jd_Mazos.setVisible(true);
+    }//GEN-LAST:event_jmi_MazosActionPerformed
+
+    private void bt_Agrega_MazoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_Agrega_MazoActionPerformed
+        // TODO add your handling code here:
+        System.out.println("hola");
+    }//GEN-LAST:event_bt_Agrega_MazoActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -356,34 +452,42 @@ public class Clase_Royale extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton bt_Agrega_Mazo;
     private javax.swing.JButton bt_Color;
     private javax.swing.JButton bt_Creacio_U;
     private javax.swing.JButton bt_Login;
-    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JDialog jd_Cartas;
     private javax.swing.JDialog jd_Creacion_Usuario;
     private com.toedter.calendar.JDateChooser jd_Fecha_nace;
     private javax.swing.JDialog jd_Login;
+    private javax.swing.JDialog jd_Mazos;
     private javax.swing.JLabel jl_Apellido;
     private javax.swing.JLabel jl_Contaseña;
     private javax.swing.JLabel jl_Contraseña;
     private javax.swing.JLabel jl_Fecha;
     private javax.swing.JLabel jl_NUsuraio;
     private javax.swing.JLabel jl_Nombre;
+    private javax.swing.JLabel jl_Opcion_de_carta;
     private javax.swing.JLabel jl_nUsuario;
     private javax.swing.JMenu jm_Clan;
     private javax.swing.JMenu jm_Login;
     private javax.swing.JMenu jm_Usuario;
+    private javax.swing.JMenuBar jmb_Usuarios;
     private javax.swing.JMenuItem jmi_Cartas;
     private javax.swing.JMenuItem jmi_Creacion;
     private javax.swing.JMenuItem jmi_Mazos;
     private javax.swing.JPasswordField pf_Contraseña;
     private javax.swing.JPasswordField pf_Contraseña1;
+    private javax.swing.JTextArea ta_Opciones_c;
     private javax.swing.JTextField tf_Apellido;
     private javax.swing.JTextField tf_NUsuario1;
     private javax.swing.JTextField tf_Nombre;
+    private javax.swing.JTextField tf_OpcionC;
     private javax.swing.JTextField tf_nUsuario;
     // End of variables declaration//GEN-END:variables
 private ArrayList<Usuarios> usuario = new ArrayList();
     private int cont = 0;
     private Color c;
+    
 }
