@@ -8,6 +8,7 @@ package lab5_jasonderas;
 import java.awt.Color;
 import java.util.ArrayList;
 import java.util.Date;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JColorChooser;
 import javax.swing.JOptionPane;
 
@@ -60,6 +61,22 @@ public class Clase_Royale extends javax.swing.JFrame {
         jl_Opcion_de_carta = new javax.swing.JLabel();
         tf_OpcionC = new javax.swing.JTextField();
         jd_Mazos = new javax.swing.JDialog();
+        jl_Mazos = new javax.swing.JLabel();
+        cb_Mazos = new javax.swing.JComboBox<>();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        j_Mazos = new javax.swing.JTree();
+        jd_Union = new javax.swing.JDialog();
+        jl_Nombre1 = new javax.swing.JLabel();
+        bt_Unirse = new javax.swing.JButton();
+        tf_Clan = new javax.swing.JTextField();
+        jd_Creacion_U = new javax.swing.JDialog();
+        jl_Nombre2 = new javax.swing.JLabel();
+        jl_Fecha_Cre = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        tf_NC = new javax.swing.JTextField();
+        tf_Tipo = new javax.swing.JTextField();
+        jd_NC = new com.toedter.calendar.JDateChooser();
+        bt_Crear = new javax.swing.JButton();
         jmb_Usuarios = new javax.swing.JMenuBar();
         jm_Usuario = new javax.swing.JMenu();
         jmi_Creacion = new javax.swing.JMenuItem();
@@ -67,6 +84,8 @@ public class Clase_Royale extends javax.swing.JFrame {
         jmi_Mazos = new javax.swing.JMenuItem();
         jmi_Cartas = new javax.swing.JMenuItem();
         jm_Clan = new javax.swing.JMenu();
+        jmi_CreacionC = new javax.swing.JMenuItem();
+        jmi_UC = new javax.swing.JMenuItem();
 
         jd_Login.setTitle("Login");
 
@@ -256,15 +275,136 @@ public class Clase_Royale extends javax.swing.JFrame {
                 .addGap(44, 44, 44))
         );
 
+        jl_Mazos.setText("Mazos");
+
+        cb_Mazos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " " }));
+        cb_Mazos.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cb_MazosItemStateChanged(evt);
+            }
+        });
+
+        javax.swing.tree.DefaultMutableTreeNode treeNode1 = new javax.swing.tree.DefaultMutableTreeNode("Mazos");
+        j_Mazos.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
+        jScrollPane2.setViewportView(j_Mazos);
+
         javax.swing.GroupLayout jd_MazosLayout = new javax.swing.GroupLayout(jd_Mazos.getContentPane());
         jd_Mazos.getContentPane().setLayout(jd_MazosLayout);
         jd_MazosLayout.setHorizontalGroup(
             jd_MazosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(jd_MazosLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jd_MazosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jScrollPane2)
+                    .addGroup(jd_MazosLayout.createSequentialGroup()
+                        .addComponent(jl_Mazos, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(cb_Mazos, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(176, Short.MAX_VALUE))
         );
         jd_MazosLayout.setVerticalGroup(
             jd_MazosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(jd_MazosLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jd_MazosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jl_Mazos)
+                    .addComponent(cb_Mazos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 137, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(42, 42, 42))
+        );
+
+        jl_Nombre1.setText("Nombre del clan");
+
+        bt_Unirse.setText("Unirse");
+        bt_Unirse.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_UnirseActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jd_UnionLayout = new javax.swing.GroupLayout(jd_Union.getContentPane());
+        jd_Union.getContentPane().setLayout(jd_UnionLayout);
+        jd_UnionLayout.setHorizontalGroup(
+            jd_UnionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_UnionLayout.createSequentialGroup()
+                .addGroup(jd_UnionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jd_UnionLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jl_Nombre1)
+                        .addGap(18, 18, 18)
+                        .addComponent(tf_Clan, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jd_UnionLayout.createSequentialGroup()
+                        .addGap(68, 68, 68)
+                        .addComponent(bt_Unirse)))
+                .addContainerGap(193, Short.MAX_VALUE))
+        );
+        jd_UnionLayout.setVerticalGroup(
+            jd_UnionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_UnionLayout.createSequentialGroup()
+                .addGap(35, 35, 35)
+                .addGroup(jd_UnionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jl_Nombre1)
+                    .addComponent(tf_Clan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 137, Short.MAX_VALUE)
+                .addComponent(bt_Unirse)
+                .addGap(81, 81, 81))
+        );
+
+        jl_Nombre2.setText("Nombre del clan");
+
+        jl_Fecha_Cre.setText("Fecha de Creacion");
+
+        jLabel4.setText("Tipo");
+
+        bt_Crear.setText("Crear");
+        bt_Crear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_CrearActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jd_Creacion_ULayout = new javax.swing.GroupLayout(jd_Creacion_U.getContentPane());
+        jd_Creacion_U.getContentPane().setLayout(jd_Creacion_ULayout);
+        jd_Creacion_ULayout.setHorizontalGroup(
+            jd_Creacion_ULayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_Creacion_ULayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jd_Creacion_ULayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jd_Creacion_ULayout.createSequentialGroup()
+                        .addComponent(jl_Nombre2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(tf_NC))
+                    .addGroup(jd_Creacion_ULayout.createSequentialGroup()
+                        .addGroup(jd_Creacion_ULayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jl_Fecha_Cre, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jd_Creacion_ULayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(bt_Crear)
+                            .addGroup(jd_Creacion_ULayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jd_NC, javax.swing.GroupLayout.DEFAULT_SIZE, 163, Short.MAX_VALUE)
+                                .addComponent(tf_Tipo)))))
+                .addContainerGap(114, Short.MAX_VALUE))
+        );
+        jd_Creacion_ULayout.setVerticalGroup(
+            jd_Creacion_ULayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_Creacion_ULayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jd_Creacion_ULayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jl_Nombre2)
+                    .addComponent(tf_NC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(32, 32, 32)
+                .addGroup(jd_Creacion_ULayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jl_Fecha_Cre)
+                    .addComponent(jd_NC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(26, 26, 26)
+                .addGroup(jd_Creacion_ULayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(tf_Tipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(60, 60, 60)
+                .addComponent(bt_Crear)
+                .addContainerGap(78, Short.MAX_VALUE))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -293,11 +433,6 @@ public class Clase_Royale extends javax.swing.JFrame {
         });
 
         jmi_Mazos.setText("Mazos");
-        jmi_Mazos.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jmi_MazosMouseClicked(evt);
-            }
-        });
         jmi_Mazos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jmi_MazosActionPerformed(evt);
@@ -318,6 +453,23 @@ public class Clase_Royale extends javax.swing.JFrame {
         jmb_Usuarios.add(jm_Usuario);
 
         jm_Clan.setText("Clanes");
+
+        jmi_CreacionC.setText("Crear un clan");
+        jmi_CreacionC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmi_CreacionCActionPerformed(evt);
+            }
+        });
+        jm_Clan.add(jmi_CreacionC);
+
+        jmi_UC.setText("Unirse a un clan");
+        jmi_UC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmi_UCActionPerformed(evt);
+            }
+        });
+        jm_Clan.add(jmi_UC);
+
         jmb_Usuarios.add(jm_Clan);
 
         setJMenuBar(jmb_Usuarios);
@@ -356,14 +508,6 @@ public class Clase_Royale extends javax.swing.JFrame {
         // TODO add your handling code here:
         c = JColorChooser.showDialog(this, "Selecione un color", Color.yellow);
     }//GEN-LAST:event_bt_ColorMouseClicked
-
-    private void jmi_MazosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jmi_MazosMouseClicked
-        // TODO add your handling code here:
-        jd_Mazos.setModal(true);
-        jd_Mazos.pack();
-        jd_Mazos.setLocationRelativeTo(this);
-        jd_Mazos.setVisible(true);
-    }//GEN-LAST:event_jmi_MazosMouseClicked
 
     private void jmi_CreacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_CreacionActionPerformed
         // TODO add your handling code here:
@@ -506,7 +650,8 @@ public class Clase_Royale extends javax.swing.JFrame {
             ArrayList m = new ArrayList();
             m.add(mazos);
             ((Usuarios) usuario.get(cont)).setMazos1(m);
-
+            DefaultComboBoxModel modelo = (DefaultComboBoxModel) cb_Mazos.getModel();
+            modelo.addElement(m);
             if (((Usuarios) usuario.get(cont)).getMazos1().size() == 2) {
                 JOptionPane.showMessageDialog(this, "Mazo uno llenado");
                 tcost = 0;
@@ -526,6 +671,46 @@ public class Clase_Royale extends javax.swing.JFrame {
             cont++;
         }
     }//GEN-LAST:event_bt_Agrega_MazoActionPerformed
+
+    private void cb_MazosItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cb_MazosItemStateChanged
+        // TODO add your handling code here:
+        if (evt.getStateChange() == 2) {
+
+        }
+    }//GEN-LAST:event_cb_MazosItemStateChanged
+
+    private void jmi_UCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_UCActionPerformed
+        // TODO add your handling code here:
+        jd_Union.setModal(true);
+        jd_Union.pack();
+        jd_Union.setLocationRelativeTo(this);
+        jd_Union.setVisible(true);
+    }//GEN-LAST:event_jmi_UCActionPerformed
+
+    private void bt_UnirseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_UnirseActionPerformed
+        // TODO add your handling code here:
+
+        if (((Clanes) clanes.get(cont)).getNombre().equalsIgnoreCase(tf_Clan.getText())) {
+            JOptionPane.showMessageDialog(this, "Se unio corectamente");
+        }
+    }//GEN-LAST:event_bt_UnirseActionPerformed
+
+    private void jmi_CreacionCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_CreacionCActionPerformed
+        // TODO add your handling code here:
+        jd_Creacion_U.setModal(true);
+        jd_Creacion_U.pack();
+        jd_Creacion_U.setLocationRelativeTo(this);
+        jd_Creacion_U.setVisible(true);
+    }//GEN-LAST:event_jmi_CreacionCActionPerformed
+
+    private void bt_CrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_CrearActionPerformed
+        // TODO add your handling code here:
+        if (tf_Tipo.getText().equalsIgnoreCase("bronce") || tf_Tipo.getText().equalsIgnoreCase("palta") || tf_Tipo.getText().equalsIgnoreCase("oro") || tf_Tipo.getText().equalsIgnoreCase("legendario")) {
+            clanes.add(new Clanes(tf_NC.getText(), jd_NC.getDate(), "", tf_Tipo.getText()));
+        } else {
+            JOptionPane.showMessageDialog(this, "Tipo de clan no validao");
+        }
+    }//GEN-LAST:event_bt_CrearActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -563,19 +748,32 @@ public class Clase_Royale extends javax.swing.JFrame {
     private javax.swing.JButton bt_Agrega_Mazo;
     private javax.swing.JButton bt_Color;
     private javax.swing.JButton bt_Creacio_U;
+    private javax.swing.JButton bt_Crear;
     private javax.swing.JButton bt_Login;
+    private javax.swing.JButton bt_Unirse;
+    private javax.swing.JComboBox<String> cb_Mazos;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTree j_Mazos;
     private javax.swing.JDialog jd_Cartas;
+    private javax.swing.JDialog jd_Creacion_U;
     private javax.swing.JDialog jd_Creacion_Usuario;
     private com.toedter.calendar.JDateChooser jd_Fecha_nace;
     private javax.swing.JDialog jd_Login;
     private javax.swing.JDialog jd_Mazos;
+    private com.toedter.calendar.JDateChooser jd_NC;
+    private javax.swing.JDialog jd_Union;
     private javax.swing.JLabel jl_Apellido;
     private javax.swing.JLabel jl_Contaseña;
     private javax.swing.JLabel jl_Contraseña;
     private javax.swing.JLabel jl_Fecha;
+    private javax.swing.JLabel jl_Fecha_Cre;
+    private javax.swing.JLabel jl_Mazos;
     private javax.swing.JLabel jl_NUsuraio;
     private javax.swing.JLabel jl_Nombre;
+    private javax.swing.JLabel jl_Nombre1;
+    private javax.swing.JLabel jl_Nombre2;
     private javax.swing.JLabel jl_Opcion_de_carta;
     private javax.swing.JLabel jl_nUsuario;
     private javax.swing.JMenu jm_Clan;
@@ -584,14 +782,19 @@ public class Clase_Royale extends javax.swing.JFrame {
     private javax.swing.JMenuBar jmb_Usuarios;
     private javax.swing.JMenuItem jmi_Cartas;
     private javax.swing.JMenuItem jmi_Creacion;
+    private javax.swing.JMenuItem jmi_CreacionC;
     private javax.swing.JMenuItem jmi_Mazos;
+    private javax.swing.JMenuItem jmi_UC;
     private javax.swing.JPasswordField pf_Contraseña;
     private javax.swing.JPasswordField pf_Contraseña1;
     private javax.swing.JTextArea ta_Opciones_c;
     private javax.swing.JTextField tf_Apellido;
+    private javax.swing.JTextField tf_Clan;
+    private javax.swing.JTextField tf_NC;
     private javax.swing.JTextField tf_NUsuario1;
     private javax.swing.JTextField tf_Nombre;
     private javax.swing.JTextField tf_OpcionC;
+    private javax.swing.JTextField tf_Tipo;
     private javax.swing.JTextField tf_nUsuario;
     // End of variables declaration//GEN-END:variables
 private ArrayList<Usuarios> usuario = new ArrayList();
@@ -600,4 +803,5 @@ private ArrayList<Usuarios> usuario = new ArrayList();
     private Carta s;
     private Mazo mazos;
     private ArrayList<Carta> cartas = new ArrayList();
+    private ArrayList clanes = new ArrayList();
 }
