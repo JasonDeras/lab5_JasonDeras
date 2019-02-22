@@ -377,8 +377,8 @@ public class Clase_Royale extends javax.swing.JFrame {
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Ocurrio un error y no se crreo el usuario");
         }
-        Usuarios s = new Usuarios(pf_Contraseña1.getText(), tf_Nombre.getText(), tf_Apellido.getText(), tf_NUsuario1.getText(), edad, c, jd_Fecha_nace.getDate());
-        usuario.add(s);
+        Usuarios us = new Usuarios(pf_Contraseña1.getText(), tf_Nombre.getText(), tf_Apellido.getText(), tf_NUsuario1.getText(), edad, c, jd_Fecha_nace.getDate());
+        usuario.add(us);
         tf_Apellido.setText("");
         tf_NUsuario1.setText("");
         tf_Nombre.setText("");
@@ -416,7 +416,100 @@ public class Clase_Royale extends javax.swing.JFrame {
 
     private void bt_Agrega_MazoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_Agrega_MazoActionPerformed
         // TODO add your handling code here:
-        System.out.println("hola");
+        int tcost = 0;
+        int cant = 0;
+        int op;
+        String nombre = "";
+        double daño = 0;
+        double vida = 0;
+        String objetivo = "";
+        String velocidad = "";
+        int coste = 0;
+        String tipo = "";
+        op = Integer.parseInt(tf_OpcionC.getText());
+        if (op == 1 || tf_OpcionC.getText().equalsIgnoreCase("minipekka")) {
+            nombre = "Minipekka";
+            daño = 100;
+            vida = 200;
+            objetivo = "Objetivos Terrestes";
+            velocidad = "Alta";
+            coste = 4;
+            tipo = "Especial";
+        } else if (op == 2 || tf_OpcionC.getText().equalsIgnoreCase("montapuerco")) {
+            nombre = "Montapuerco";
+            daño = 100;
+            vida = 200;
+            objetivo = "Objetivos Terrestes";
+            velocidad = "Alta";
+            coste = 4;
+            tipo = "Especial";
+        } else if (op == 3 || tf_OpcionC.getText().equalsIgnoreCase("golem")) {
+            nombre = "Golem";
+            daño = 100;
+            vida = 800;
+            objetivo = "Objetivos Terrestes";
+            velocidad = "Baja";
+            coste = 8;
+            tipo = "Epica";
+        } else if (op == 4 || tf_OpcionC.getText().equalsIgnoreCase("leñador")) {
+            nombre = "Leñador";
+            daño = 200;
+            vida = 200;
+            objetivo = "Objetivos Terrestes";
+            velocidad = "Alta";
+            coste = 4;
+            tipo = "Legendario";
+        } else if (op == 5 || tf_OpcionC.getText().equalsIgnoreCase("dragon infernal")) {
+            nombre = "Dragon Infernal";
+            daño = 100;
+            vida = 300;
+            objetivo = "Objetivos Terrestes y Aereos";
+            velocidad = "Media";
+            coste = 4;
+            tipo = "Legendario";
+        } else if (op == 6 || tf_OpcionC.getText().equalsIgnoreCase("dragon")) {
+            nombre = "Dragon";
+            daño = 100;
+            vida = 200;
+            objetivo = "Objetivos Terrestes y Aereos";
+            velocidad = "Media";
+            coste = 4;
+            tipo = "Epica";
+        } else if (op == 7 || tf_OpcionC.getText().equalsIgnoreCase("gigante noble")) {
+            nombre = "Gigante noble";
+            daño = 100;
+            vida = 800;
+            objetivo = "Objetivos Terrestes";
+            velocidad = "Media";
+            coste = 6;
+            tipo = "Comun";
+        } else if (op == 8 || tf_OpcionC.getText().equalsIgnoreCase("pandilla de duendes")) {
+            nombre = "Pandilla de Duendes";
+            daño = 100;
+            vida = 100;
+            objetivo = "Objetivos Terrestes y Aereos";
+            velocidad = "Alta";
+            coste = 3;
+            tipo = "Comun";
+        } else {
+            JOptionPane.showMessageDialog(this, "Opcion de carta no valida");
+        }
+        if (cant == 3) {
+            JOptionPane.showMessageDialog(this, "Ya Hay tres cartas en ese maso");
+        } else {
+            s = new Carta(nombre, daño, vida, objetivo, velocidad, coste, tipo);
+            tcost += coste;
+            cartas.add(s);
+            mazos.setCoste(coste);
+            mazos.setCartas(cartas);
+            ArrayList m = new ArrayList();
+            m.add(mazos);
+            ((Usuarios) usuario.get(cont)).setMazos(m);
+            if (((Usuarios) usuario.get(cont)).getMazos().size() > 2) {
+                JOptionPane.showMessageDialog(this, "El mazo ya tiene tres clases");
+            }
+            cont++;
+        }
     }//GEN-LAST:event_bt_Agrega_MazoActionPerformed
 
     public static void main(String args[]) {
@@ -489,5 +582,7 @@ public class Clase_Royale extends javax.swing.JFrame {
 private ArrayList<Usuarios> usuario = new ArrayList();
     private int cont = 0;
     private Color c;
-    
+    private Carta s;
+    private Mazo mazos;
+    private ArrayList<Carta> cartas = new ArrayList();
 }

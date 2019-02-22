@@ -84,17 +84,9 @@ public class Usuarios {
         this.mazos = mazos;
     }
 
-    public Date getFecha() {
-        return Fecha;
-    }
-
-    public void setFecha(Date Fecha) {
-        this.Fecha = Fecha;
-    }
-
     @Override
     public String toString() {
-        return "Usuarios{" + "contrase\u00f1a=" + contraseña + ", nombre=" + nombre + ", apellido=" + apellido + ", n_usuario=" + n_usuario + ", edad=" + edad + ", c=" + c + ", mazos=" + mazos + ", Fecha=" + Fecha + '}';
+        return "Usuarios{" + "nombre=" + nombre + ", apellido=" + apellido + ", n_usuario=" + n_usuario + ", edad=" + edad + ", c=" + c + ", mazos=" + mazos + '}';
     }
 
 }
